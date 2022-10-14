@@ -11,8 +11,15 @@ Terminal UI application for managing vCard contacts, written in Rust. It uses th
 
 ## Install
 
+Install via cargo.
 ```shell
 cargo install vcard_tui
+```
+
+Install via homebrew.
+```shell
+brew tap kenianbei/vct
+brew install vct
 ```
 
 ## Usage
