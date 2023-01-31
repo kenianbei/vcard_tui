@@ -1,0 +1,3 @@
+max_width = 144
+struct_lit_width = 32
+array_width = 32
