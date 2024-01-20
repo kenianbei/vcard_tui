@@ -1,7 +1,7 @@
 use std::borrow::BorrowMut;
 use std::fs::{read_to_string, write};
 
-use tui::widgets::ListState;
+use ratatui::widgets::ListState;
 use vcard_parser::constants::PropertyName;
 use vcard_parser::error::VcardError;
 use vcard_parser::parse_vcards;

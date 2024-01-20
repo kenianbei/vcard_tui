@@ -1,15 +1,12 @@
-use std::io::Stdout;
-
-use tui::backend::CrosstermBackend;
-use tui::layout::{Alignment, Constraint, Direction, Layout, Rect};
-use tui::text::Text;
-use tui::widgets::Paragraph;
-use tui::Frame;
+use ratatui::layout::{Alignment, Constraint, Direction, Layout, Rect};
+use ratatui::text::Text;
+use ratatui::widgets::Paragraph;
+use ratatui::Frame;
 
 use crate::state::popup::message::MessageState;
 use crate::util::get_block;
 
-pub fn render_message_popup(state: &mut MessageState, frame: &mut Frame<CrosstermBackend<Stdout>>, rect: Rect) {
+pub fn render_message_popup(state: &mut MessageState, frame: &mut Frame, rect: Rect) {
     let rows = Layout::default()
         .direction(Direction::Vertical)
         .constraints([

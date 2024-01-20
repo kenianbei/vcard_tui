@@ -1,11 +1,8 @@
-use std::io::Stdout;
-
-use tui::backend::CrosstermBackend;
-use tui::layout::Rect;
-use tui::style::Style;
-use tui::text::Text;
-use tui::widgets::{Block, Borders, ListItem, Paragraph};
-use tui::Frame;
+use ratatui::layout::Rect;
+use ratatui::style::Style;
+use ratatui::text::Text;
+use ratatui::widgets::{Block, Borders, ListItem, Paragraph};
+use ratatui::Frame;
 use tui_textarea::TextArea;
 use vcard_parser::constants::PropertyName;
 use vcard_parser::traits::{HasName, HasValue};
@@ -25,7 +22,7 @@ pub fn render_widget_with_textarea(
     value: &str,
     is_selected: bool,
     textarea: Option<&mut TextArea>,
-    frame: &mut Frame<CrosstermBackend<Stdout>>,
+    frame: &mut Frame,
     rect: Rect,
 ) {
     if let (Some(textarea), true) = (textarea, is_selected) {

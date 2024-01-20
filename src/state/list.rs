@@ -1,6 +1,6 @@
 use std::ops::{Add, Sub};
 
-use tui::widgets::ListState;
+use ratatui::widgets::ListState;
 
 pub trait StatefulList<T> {
     fn list(&mut self) -> &mut ListState;

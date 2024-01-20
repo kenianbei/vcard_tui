@@ -1,12 +1,9 @@
 use std::borrow::BorrowMut;
-use std::io::Stdout;
-
-use tui::backend::CrosstermBackend;
-use tui::layout::{Alignment, Constraint, Direction, Layout, Rect};
-use tui::style::Style;
-use tui::text::Text;
-use tui::widgets::{Block, Borders, Paragraph};
-use tui::Frame;
+use ratatui::layout::{Alignment, Constraint, Direction, Layout, Rect};
+use ratatui::style::Style;
+use ratatui::text::Text;
+use ratatui::widgets::{Block, Borders, Paragraph};
+use ratatui::Frame;
 use vcard_parser::constants::PropertyName;
 
 use crate::state::contact::ContactSelected;
@@ -17,7 +14,7 @@ use crate::tui::render::properties::render_properties_state;
 use crate::tui::render::property::render_property;
 use crate::{State, PRIMARY};
 
-pub fn render_contact(frame: &mut Frame<CrosstermBackend<Stdout>>, rect: Rect, state: &mut State) {
+pub fn render_contact(frame: &mut Frame, rect: Rect, state: &mut State) {
     frame.render_widget(
         Block::default()
             .title("Contact Information")

@@ -1,16 +1,13 @@
-use std::io::Stdout;
-
-use tui::backend::CrosstermBackend;
-use tui::layout::{Alignment, Constraint, Direction, Layout, Rect};
-use tui::text::Text;
-use tui::widgets::Paragraph;
-use tui::Frame;
+use ratatui::layout::{Alignment, Constraint, Direction, Layout, Rect};
+use ratatui::text::Text;
+use ratatui::widgets::Paragraph;
+use ratatui::Frame;
 
 use crate::state::popup::property_n::{PropertyNSelected, PropertyNState};
 use crate::tui::HasValueListComponent;
 use crate::util::{get_block, render_widget_with_textarea};
 
-pub fn render_property_n_popup(state: &mut PropertyNState, frame: &mut Frame<CrosstermBackend<Stdout>>, rect: Rect) {
+pub fn render_property_n_popup(state: &mut PropertyNState, frame: &mut Frame, rect: Rect) {
     let rows = Layout::default()
         .direction(Direction::Vertical)
         .constraints([

@@ -16,7 +16,7 @@
 
 use std::borrow::BorrowMut;
 
-use ::tui::style::Color;
+use ratatui::style::Color;
 use crossterm::event::{read, Event, KeyCode, KeyModifiers};
 
 use crate::state::popup::message::MessageState;

@@ -1,9 +1,6 @@
-use std::io::Stdout;
-
-use tui::backend::CrosstermBackend;
-use tui::layout::Rect;
-use tui::widgets::List;
-use tui::Frame;
+use ratatui::layout::Rect;
+use ratatui::widgets::List;
+use ratatui::Frame;
 use vcard_parser::constants::PropertyName;
 use vcard_parser::vcard::property::property_fn::PropertyFnData;
 use vcard_parser::vcard::property::Property::PropertyFn;
@@ -12,7 +9,7 @@ use crate::state::StateSelected;
 use crate::util::{get_block, get_list_item, property_content};
 use crate::State;
 
-pub fn render_contacts(frame: &mut Frame<CrosstermBackend<Stdout>>, rect: Rect, state: &mut State) {
+pub fn render_contacts(frame: &mut Frame, rect: Rect, state: &mut State) {
     let mut items = Vec::new();
 
     for (i, vcard) in state.contacts.vcards.iter().enumerate() {

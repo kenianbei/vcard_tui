@@ -13,11 +13,11 @@ categories = ["command-line-utilities", "email"]
 include = ["src/", "LICENSE", "README.md"]
 
 [dependencies]
-anyhow = "1.0.68"
-crossterm = "0.25.0"
-tui = "0.19.0"
-tui-textarea = "0.2.0"
-vcard_parser = "0.2.1"
+anyhow = "1.0.79"
+crossterm = "0.27.0"
+ratatui = "0.25.0"
+tui-textarea = "0.4.0"
+vcard_parser = "0.2.2"
 
 [[bin]]
 name = "vct"

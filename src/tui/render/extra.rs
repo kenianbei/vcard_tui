@@ -1,12 +1,10 @@
 use std::borrow::BorrowMut;
-use std::io::Stdout;
 
-use tui::backend::CrosstermBackend;
-use tui::layout::Rect;
-use tui::style::Style;
-use tui::text::Text;
-use tui::widgets::{List, ListItem};
-use tui::Frame;
+use ratatui::layout::Rect;
+use ratatui::style::Style;
+use ratatui::text::Text;
+use ratatui::widgets::{List, ListItem};
+use ratatui::Frame;
 
 use crate::state::extra::ExtraPropertiesState;
 use crate::util::get_block;
@@ -15,7 +13,7 @@ use crate::{PRIMARY, PRIMARY_CONTRAST};
 pub fn render_extra_properties_state(
     extra: &mut ExtraPropertiesState,
     selected: bool,
-    frame: &mut Frame<CrosstermBackend<Stdout>>,
+    frame: &mut Frame,
     rect: Rect,
 ) {
     let mut items = Vec::new();

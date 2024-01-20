@@ -1,10 +1,7 @@
-use std::io::Stdout;
-
-use tui::backend::CrosstermBackend;
-use tui::layout::Rect;
-use tui::text::Text;
-use tui::widgets::Paragraph;
-use tui::Frame;
+use ratatui::layout::Rect;
+use ratatui::text::Text;
+use ratatui::widgets::Paragraph;
+use ratatui::Frame;
 use vcard_parser::traits::HasName;
 use vcard_parser::vcard::property::Property;
 
@@ -14,7 +11,7 @@ pub fn render_property(
     property_name: &str,
     property: Option<&Property>,
     selected: bool,
-    frame: &mut Frame<CrosstermBackend<Stdout>>,
+    frame: &mut Frame,
     rect: Rect,
 ) {
     if let Some(p) = property {

@@ -1,17 +1,14 @@
-use std::io::Stdout;
-
-use tui::backend::CrosstermBackend;
-use tui::layout::{Alignment, Constraint, Direction, Layout, Rect};
-use tui::text::Text;
-use tui::widgets::Paragraph;
-use tui::Frame;
+use ratatui::layout::{Alignment, Constraint, Direction, Layout, Rect};
+use ratatui::text::Text;
+use ratatui::widgets::Paragraph;
+use ratatui::Frame;
 
 use crate::state::popup::property_extra::{PropertyExtraSelected, PropertyExtraState};
 use crate::util::{get_block, render_widget_with_textarea};
 
 const EXTRA_PROPERTIES_HELP: &str = "Custom properties should be formatted as per vCard 4.0 rules.\nFor example: NICKNAME:Johnny";
 
-pub fn render_property_extra_popup(state: &mut PropertyExtraState, frame: &mut Frame<CrosstermBackend<Stdout>>, rect: Rect) {
+pub fn render_property_extra_popup(state: &mut PropertyExtraState, frame: &mut Frame, rect: Rect) {
     let rows = Layout::default()
         .direction(Direction::Vertical)
         .constraints([

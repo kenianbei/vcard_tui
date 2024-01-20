@@ -1,10 +1,7 @@
-use std::io::Stdout;
-
-use tui::backend::CrosstermBackend;
-use tui::layout::{Constraint, Direction, Layout, Rect};
-use tui::style::Style;
-use tui::widgets::{Block, Borders, Clear};
-use tui::Frame;
+use ratatui::layout::{Constraint, Direction, Layout, Rect};
+use ratatui::style::Style;
+use ratatui::widgets::{Block, Borders, Clear};
+use ratatui::Frame;
 
 use property_adr::render_property_adr_popup;
 use property_email::render_property_email_popup;
@@ -40,7 +37,7 @@ mod property_tel;
 mod property_url;
 mod vcard_add;
 
-pub fn render_popup(frame: &mut Frame<CrosstermBackend<Stdout>>, rect: Rect, popup: &mut PopupState) {
+pub fn render_popup(frame: &mut Frame, rect: Rect, popup: &mut PopupState) {
     let block = Block::default()
         .title(popup_title(popup))
         .borders(Borders::ALL)

@@ -1,17 +1,14 @@
-use std::io::Stdout;
-
-use tui::backend::CrosstermBackend;
-use tui::layout::Rect;
-use tui::style::Style;
-use tui::text::Text;
-use tui::widgets::{Block, Borders, Paragraph};
-use tui::Frame;
+use ratatui::layout::Rect;
+use ratatui::style::Style;
+use ratatui::text::Text;
+use ratatui::widgets::{Block, Borders, Paragraph};
+use ratatui::Frame;
 
 use crate::state::contact::ContactSelected;
 use crate::state::StateSelected;
 use crate::{State, PRIMARY};
 
-pub fn render_toolbar(frame: &mut Frame<CrosstermBackend<Stdout>>, rect: Rect, state: &mut State) {
+pub fn render_toolbar(frame: &mut Frame, rect: Rect, state: &mut State) {
     let mut text = String::from(" Quit [q] | Import Contacts [i] | Export Contacts [e] ");
     match state.selected.get() {
         StateSelected::Contacts => text.push_str("| Add Contact [a] | Delete Contact [d] | Sort Contacts [s] "),

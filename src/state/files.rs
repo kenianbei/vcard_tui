@@ -3,7 +3,7 @@ use std::env;
 use std::fs::read_dir;
 use std::path::{Path, PathBuf};
 
-use tui::widgets::ListState;
+use ratatui::widgets::ListState;
 
 use crate::state::list::StatefulList;
 

@@ -1,15 +1,12 @@
-use std::io::Stdout;
-
-use tui::backend::CrosstermBackend;
-use tui::layout::{Alignment, Constraint, Direction, Layout, Rect};
-use tui::text::Text;
-use tui::widgets::{List, Paragraph};
-use tui::Frame;
+use ratatui::layout::{Alignment, Constraint, Direction, Layout, Rect};
+use ratatui::text::Text;
+use ratatui::widgets::{List, Paragraph};
+use ratatui::Frame;
 
 use crate::state::popup::export::{ExportSelected, ExportState};
 use crate::util::{get_block, get_list_item, render_widget_with_textarea};
 
-pub fn render_export_popup(state: &mut ExportState, frame: &mut Frame<CrosstermBackend<Stdout>>, rect: Rect) {
+pub fn render_export_popup(state: &mut ExportState, frame: &mut Frame, rect: Rect) {
     let rows = Layout::default()
         .direction(Direction::Vertical)
         .constraints([

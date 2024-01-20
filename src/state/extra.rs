@@ -1,6 +1,6 @@
 use std::borrow::BorrowMut;
 
-use tui::widgets::ListState;
+use ratatui::widgets::ListState;
 use vcard_parser::constants::PropertyName;
 use vcard_parser::traits::HasName;
 use vcard_parser::vcard::property::Property;

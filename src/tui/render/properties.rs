@@ -1,15 +1,13 @@
 use std::borrow::BorrowMut;
-use std::io::Stdout;
 
-use tui::backend::CrosstermBackend;
-use tui::layout::Rect;
-use tui::widgets::List;
-use tui::Frame;
+use ratatui::layout::Rect;
+use ratatui::widgets::List;
+use ratatui::Frame;
 
 use crate::state::properties::PropertiesState;
 use crate::util::{get_block, get_list_item, property_content, property_title};
 
-pub fn render_properties_state(state: &mut PropertiesState, selected: bool, frame: &mut Frame<CrosstermBackend<Stdout>>, rect: Rect) {
+pub fn render_properties_state(state: &mut PropertiesState, selected: bool, frame: &mut Frame, rect: Rect) {
     let mut items = Vec::new();
 
     for (i, p) in state.properties.iter().enumerate() {
